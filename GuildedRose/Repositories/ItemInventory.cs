@@ -10,8 +10,15 @@ namespace GuildedRose.Repositories
 {
     public class ItemInventory : IItemInventory
     {
-        #region variables           
-        public IList<Item> Items;
+        #region Constants Declaration
+        private const string AGEDBRIE = "Aged Brie";
+        private const string BACKSTAGE = "Backstage passes to a TAFKAL80ETC concert";
+        private const string SULFURAS = "Sulfuras, Hand of Ragnaros";
+        private const string CONJURED = "Conjured Mana Cake";
+        #endregion
+
+        #region variables
+        public IList<Item> Items;
         #endregion
 
         public ItemInventory(IList<Item> Items)
@@ -27,7 +34,45 @@ namespace GuildedRose.Repositories
                 foreach (Item item in Items)
                 {
                     PrintOutputBeforeUpdation(item.Name, item.SellIn, item.Quality);
-                    // to do
+                    switch (item.Name)
+                    {
+                        case AGEDBRIE:
+                            item.SellIn--;
+                            item.Quality++;
+
+                            if (item.SellIn <= 0)
+                            {
+                                item.Quality++;
+                            }
+                            if (item.Quality > 50)
+                            {
+                                item.Quality = 50;
+                            }
+                            break;
+                        case BACKSTAGE:
+                            // to do
+                            break;
+                        case CONJURED:
+                            // to do
+                            break;
+                        case SULFURAS:
+                            // nothing to do as this is premium brand
+                            break;
+                        default:
+                            item.SellIn--;
+                            item.Quality--;
+
+                            if (item.SellIn <= 0)
+                            {
+                                item.Quality--;
+                            }
+
+                            if (item.Quality < 0)
+                            {
+                                item.Quality = 0;
+                            }
+                            break;
+                    }
                     PrintOutputAfterUpdation(item.Name, item.SellIn, item.Quality);
                 }            
             }
