@@ -16,13 +16,13 @@ IList<Item> lstItem = new List<Item> {
     new Item { Name = "Conjured Mana Cake", SellIn = 3, Quality = 6}
 };
 
-ItemUpdation itemUpdation = new ItemUpdation(lstItem);
+ItemInventory itemInventory = new ItemInventory(lstItem);
 Console.WriteLine("---------------  Gilded Rose Inventory System Updation Started!  ---------------");
 
 // Get number of days in current month
 int days = DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month);
 
-itemUpdation.Updation();
+itemInventory.Updation();
 
 Console.WriteLine("---------------  Gilded Rose Inventory System Updation Ended!  ---------------");
 

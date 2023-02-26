@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GuildedRose.Repositories
 {
-    public interface IItemUpdation
+    public interface IItemInventory
     {
         public void Updation();
     }
