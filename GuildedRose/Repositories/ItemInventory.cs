@@ -50,10 +50,39 @@ namespace GuildedRose.Repositories
                             }
                             break;
                         case BACKSTAGE:
-                            // to do
-                            break;
+                            item.SellIn--;
+                            item.Quality++;
+
+                            if (item.SellIn < 11)
+                            {
+                                item.Quality++;
+                            }
+                            if (item.SellIn < 6)
+                            {
+                                item.Quality++;
+                            }
+                            if (item.SellIn <= 0)
+                            {
+                                item.Quality = 0;
+                            }
+                            if (item.Quality > 50)
+                            {
+                                item.Quality = 50;
+                            }
+                            break;                           
                         case CONJURED:
-                            // to do
+                            item.SellIn--;
+                            item.Quality = item.Quality - 2;
+
+                            if (item.SellIn <= 0)
+                            {
+                                item.Quality = item.Quality - 2;
+                            }
+
+                            if (item.Quality < 0)
+                            {
+                                item.Quality = 0;
+                            }
                             break;
                         case SULFURAS:
                             // nothing to do as this is premium brand
