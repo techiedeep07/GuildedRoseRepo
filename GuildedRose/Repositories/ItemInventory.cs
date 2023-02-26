@@ -12,9 +12,9 @@ namespace GuildedRose.Repositories
     {
         #region Constants Declaration
         private const string AGEDBRIE = "Aged Brie";
-        private const string BACKSTAGE = "Backstage passes to a TAFKAL80ETC concert";
-        private const string SULFURAS = "Sulfuras, Hand of Ragnaros";
-        private const string CONJURED = "Conjured Mana Cake";
+        private const string BACKSTAGE = "Backstage passes";
+        private const string SULFURAS = "Sulfuras";
+        private const string CONJURED = "Conjured";
         #endregion
 
         #region variables

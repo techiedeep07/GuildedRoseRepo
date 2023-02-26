@@ -1,0 +1,3 @@
+﻿1. Click on "Test" menu on Top Menu bar.
+2. Afterward select "Run all Tests" and run it.
+3. Then as in output you will see all test cases executed succesfully and passed.
